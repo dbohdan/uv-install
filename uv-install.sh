@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-# Requires shasum(1) and wget(1).
+# Requires sha256sum(1) and wget(1).
 set -euo pipefail
 
 dest_dir=/usr/local/bin/
@@ -16,6 +16,6 @@ cd "$temp_dir"
 wget -q "$url" "$url.sha256"
 
 archive=$prefix.tar.gz
-shasum --check --quiet "$archive".sha256
+sha256sum -c "$archive".sha256 >/dev/null
 tar -xf "$archive"
 install "$prefix"/uv "$dest_dir"
