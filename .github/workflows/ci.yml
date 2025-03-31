@@ -1,0 +1,34 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install coreutils
+
+    - name: Test
+      run: |
+        if [ "${{ matrix.os }}" == macos-latest ]; then
+          prefix=uv-aarch64-apple-darwin
+        else
+          prefix=uv-x86_64-unknown-linux-gnu
+        fi
+
+        ./uv-install --dest-dir bin/ --prefix "$prefix"
+        bin/uv --version
+
+        ./uv-install --dest-dir ~/.local/bin/ --prefix "$prefix"
+        ~/.local/bin/uv --version
