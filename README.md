@@ -8,7 +8,7 @@ Go to the latest [GitHub release](https://github.org/astral-sh/uv/releases) of u
 
 The script requires sha256sum(1) and wget(1).
 (BusyBox works.)
-It has been tested on Alpine Linux 3.20, Debian 12, Fedora 39, Termux, and Ubuntu 24.04.
+It has been tested on Alpine Linux 3.20, Debian 12, Fedora 39, macOS 14 Sonoma, Termux, and Ubuntu 24.04.
 
 ## Usage
 
