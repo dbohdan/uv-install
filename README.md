@@ -4,7 +4,7 @@ This is a short POSIX shell script to install or upgrade to the latest version o
 It is intended to be easier to audit than [astral.sh/uv/install.sh](https://astral.sh/uv/install.sh).
 
 On systems other than GNU/Linux, including Linux with musl libc, you will have to specify the download prefix manually (for example, `uv-aarch64-unknown-linux-musl`).
-Go to the latest [GitHub release](https://github.or/astral-sh/uv/releases) of uv and examine the filenames to find the correct prefix.
+Go to the latest [GitHub release](https://github.org/astral-sh/uv/releases) of uv and examine the filenames to find the correct prefix.
 
 The script requires sha256sum(1) and wget(1).
 (BusyBox works.)
