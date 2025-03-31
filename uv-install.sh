@@ -1,6 +1,6 @@
-#! /usr/bin/env bash
+#! /bin/sh
 # Requires sha256sum(1) and wget(1).
-set -euo pipefail
+set -eu
 
 dest_dir=/usr/local/bin/
 prefix=uv-$(uname -m)-unknown-linux-gnu
@@ -20,7 +20,7 @@ EOF
 }
 
 check_missing_arg() {
-    if [[ $# -ge 2 ]]; then
+    if [ $# -ge 2 ]; then
         return
     fi
 
@@ -28,7 +28,7 @@ check_missing_arg() {
     exit 2
 }
 
-while [[ $# -gt 0 ]]; do
+while [ $# -gt 0 ]; do
     case "$1" in
     -d | --dest-dir)
         check_missing_arg "$@"
