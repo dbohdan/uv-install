@@ -92,5 +92,5 @@ archive=$prefix.tar.gz
 sha256sum -c "$archive".sha256 >/dev/null
 tar -xf "$archive"
 
-mkdir -p "$dest_dir"
-install "$prefix"/uv "$dest_dir"
+install -d "$dest_dir"
+install "$prefix"/uv "$prefix"/uvx "$dest_dir"
